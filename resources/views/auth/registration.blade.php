@@ -27,28 +27,28 @@ Registration
                 <div class="form-outline mb-4">
                     <input type="text" id="name" name="name" class="form-control form-control-lg" placeholder="Name" value="{{old('name')}}" />
                     @error('name')
-                        <p class="text-danger"><i class="fas fa-exclamation-triangle"></i> {{ $message }} </p>
+                        <p class="text-danger float-start ms-5"><i class="fas fa-exclamation-triangle"></i> {{ $message }} </p>
                     @enderror
                 </div>
 
                 <div class="form-outline mb-4">
                     <input type="text" id="phone" name="phone" class="form-control form-control-lg" placeholder="Phone" value="{{old('phone')}}" />
                     @error('phone')
-                        <p class="text-danger"><i class="fas fa-exclamation-triangle"></i> {{ $message }} </p>
+                        <p class="text-danger float-start ms-5"><i class="fas fa-exclamation-triangle"></i> {{ $message }} </p>
                     @enderror
                 </div>
 
                 <div class="form-outline mb-4">
                     <input type="text" id="email" name="email" class="form-control form-control-lg" placeholder="E-mail" value="{{old('email')}}" />
                     @error('email')
-                        <p class="text-danger"><i class="fas fa-exclamation-triangle"></i> {{ $message }} </p>
+                        <p class="text-danger float-start ms-5"><i class="fas fa-exclamation-triangle"></i> {{ $message }} </p>
                     @enderror
                 </div>
     
                 <div class="form-outline mb-4">
                     <input type="password" id="password" name="password" class="form-control form-control-lg" placeholder="Password" value="{{old('password')}}" />
                     @error('password')
-                        <p class="text-danger"><i class="fas fa-exclamation-triangle"></i> {{ $message }} </p>
+                        <p class="text-danger float-start ms-5"><i class="fas fa-exclamation-triangle"></i> {{ $message }} </p>
                     @enderror
                 </div>
 

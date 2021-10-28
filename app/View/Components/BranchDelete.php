@@ -1,0 +1,31 @@
+<?php
+
+namespace App\View\Components;
+
+use Illuminate\View\Component;
+use App\Models\Branch;
+
+class BranchDelete extends Component
+{
+    public $branch;
+    /**
+     * Create a new component instance.
+     *
+     * @return void
+     */
+    public function __construct($branch)
+    {
+        //
+        $this->branch = Branch::where('id', $branch)->first();
+    }
+
+    /**
+     * Get the view / contents that represent the component.
+     *
+     * @return \Illuminate\Contracts\View\View|\Closure|string
+     */
+    public function render()
+    {
+        return view('components.Branch.branch-delete');
+    }
+}
