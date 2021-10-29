@@ -1,5 +1,4 @@
 <a href="/" class="d-flex align-items-center mb-3 p-2 link-dark text-decoration-none border-bottom">
-    <svg class="bi me-2" width="30" height="24"><use xlink:href="#bootstrap"/></svg>
     <span class="fs-5 fw-bold btn col-12 text-white">
         <i class="fab fa-asymmetrik"></i> 
         Easy Alpha

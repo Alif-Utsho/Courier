@@ -18,30 +18,26 @@ use App\Http\Controllers\AgentController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('home');
+Route::get('/', [AuthController::class, 'homeGet'])->name('home');
 
 
 // Auth Routes
 Route::get('/login', [AuthController::class, 'loginGetController'])->name('login.get')->middleware('authMiddleware');
 Route::post('/login', [AuthController::class, 'loginPostController'])->name('login.post')->middleware('authMiddleware');
-
 Route::get('/registration', [AuthController::class, 'registrationGetController'])->name('registration.get')->middleware('authMiddleware');
 Route::post('/registration', [AuthController::class, 'registrationPostController'])->name('registration.post')->middleware('authMiddleware');
-
 Route::get('/signout', [AuthController::class, 'signout'])->name('sign.out');
 
 
 // Admin Routes
-Route::get('/admin', [AdminController::class, 'adminGetController'])->name('admin.get')->middleware('authMiddleware');
+Route::get('/admin', [AdminController::class, 'adminGetController'])->name('admin.get')->middleware('admin');
 
 // Branch
-Route::post('/branchadd', [BranchController::class, 'branchAddController'])->name('branch.add');
-Route::post('/branchupdate', [BranchController::class, 'branchUpdate'])->name('branch.update');
-Route::post('/branchdelete', [BranchController::class, 'branchDelete'])->name('branch.delete');
+Route::post('/branchadd', [BranchController::class, 'branchAddController'])->name('branch.add')->middleware('authentic');
+Route::post('/branchupdate', [BranchController::class, 'branchUpdate'])->name('branch.update')->middleware('authentic');
+Route::post('/branchdelete', [BranchController::class, 'branchDelete'])->name('branch.delete')->middleware('authentic');
 
 // Agent
-Route::post('/staffadd', [AgentController::class, 'staffaddController'])->name('staff.add');
-Route::post('/staffupdate', [AgentController::class, 'staffUpdate'])->name('staff.update');
-Route::post('/staffdelete', [AgentController::class, 'staffDelete'])->name('staff.delete');
+Route::post('/staffadd', [AgentController::class, 'staffaddController'])->name('staff.add')->middleware('authentic');
+Route::post('/staffupdate', [AgentController::class, 'staffUpdate'])->name('staff.update')->middleware('authentic');
+Route::post('/staffdelete', [AgentController::class, 'staffDelete'])->name('staff.delete')->middleware('authentic');

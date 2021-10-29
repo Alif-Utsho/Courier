@@ -24,8 +24,6 @@ class AuthMiddleware
                     return redirect()->route('home');
                 case 'admin':
                     return redirect()->route('admin.get');
-                    // echo "admin";
-                    // break;
                 case 'staff':
                     echo "Agent";
                     break;

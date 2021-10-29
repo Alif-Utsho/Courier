@@ -8,6 +8,16 @@ use App\Models\User;
 
 class AuthController extends Controller
 {
+
+    public function homeGet(){
+        $auth = false;
+        $user = '';
+        if(session()->has('user')){
+            $auth = true;
+            $user = session()->get('user');
+        }
+        return view('welcome', ['auth'=>$auth, 'user'=>$user]);
+    }
     public function loginGetController(){
         return view('auth.login');
     }
